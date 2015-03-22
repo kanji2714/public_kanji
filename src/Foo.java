@@ -2,7 +2,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 
-public class Foo extends JFrame {
+public class Foo extends JFrame implements TestListener{
 
 	public Foo() {
 		setAlwaysOnTop(true);
@@ -16,7 +16,17 @@ public class Foo extends JFrame {
 		add(label);
 	}
 
+	@Override
+	public void testMethod() {
+
+	}
+
 	public static void main(String[] args) {
 		new Foo();
 	}
+}
+
+interface TestListener {
+
+	public void testMethod();
 }
